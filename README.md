@@ -16,17 +16,17 @@ this package contains Email, OTP, etc.
 ### Email
 Email authentication has following steps:
 
-####Register
+#### Register
 * insert email and password in register route, you'll receive and activation email.
 * for validating your account, click on activation link.
 
-####Login
+#### Login
 * insert email and password in login route, if user is active it returns Jwt token.
 
-####Forgot Password
+#### Forgot Password
 * insert email in forgot password route, an email with code send for change password.
 
-####change password
+#### Change password
 * insert mail, code (from forget password email) and new password to change user password.
 
 #### Directory Structure
@@ -97,18 +97,18 @@ adonis auth:setup
 
 A prompt to choose type of Authentication
 
-##Events
+## Events
 Please add the following line at the beginning of start/events.js.
 ```js
 require('./authEvents');
 ```
 
-##Migrations
+## Migrations
 Run the following command to run startup migrations. Please remember remove old User migration and model, package generates thees files.
 ```js
 adonis migration:run
 ```
 
 
-##Postman
+## Postman
 [link](https://www.getpostman.com/collections/7af699527fe1425a4fe0)
