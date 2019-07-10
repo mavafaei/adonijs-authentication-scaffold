@@ -99,13 +99,16 @@ A prompt to choose type of Authentication
 
 ##Events
 Please add the following line at the beginning of start/events.js.
-
+```js
 require('./authEvents');
+```
 
 ##Migrations
 Run the following command to run startup migrations. Please remember remove old User migration and model, package generates thees files.
-
+```js
 adonis migration:run
+```
+
 
 ##Postman
-https://www.getpostman.com/collections/7af699527fe1425a4fe0
+[link](https://www.getpostman.com/collections/7af699527fe1425a4fe0)
