@@ -1,5 +1,5 @@
-"use strict";
-const Env = use('Env');
+"use strict"
+const Env = use('Env')
 module.exports = {
     HttpResponse: {
         ok: 200,
@@ -12,6 +12,14 @@ module.exports = {
         conflict: 409,
         not_processable: 422
     },
+    mail_sender: 'mail@sender.com',
+    app_host: 'http://0.0.0.0:3333',
+    /*
+     |--------------------------------------------------------------------------
+     | Redirect URL call after verification Mail
+     |--------------------------------------------------------------------------
+     */
+    redirect_host: 'http://0.0.0.0:3333',
     /*
      |--------------------------------------------------------------------------
      | Registration Route
@@ -21,6 +29,15 @@ module.exports = {
      |
      */
     registrationRoute: "/register",
+    /*
+     |--------------------------------------------------------------------------
+     | Verification Route
+     |--------------------------------------------------------------------------
+     |
+     | Specifies the route to handle Verification GET requests.
+     |
+     */
+    verificationRoute: "/verification",
     /*
      |--------------------------------------------------------------------------
      | Registration Success Redirect Route
@@ -42,11 +59,20 @@ module.exports = {
     loginRoute: "/login",
     /*
      |--------------------------------------------------------------------------
-     | Password Reset Route
+     | Forgot Password Route
      |--------------------------------------------------------------------------
      |
-     | Specifies the route to handle password reset GET and POST requests.
+     | Specifies the route to handle Forgot Password  POST request.
      |
      */
-    passwordResetRoute: "/password/reset",
-};
+    forgotPasswordRoute: "/forgotPassword",
+    /*
+     |--------------------------------------------------------------------------
+     | Change Password Route
+     |--------------------------------------------------------------------------
+     |
+     | Specifies the route to handle Forgot Password  POST request.
+     |
+     */
+    changePasswordRoute: "/changePassword",
+}

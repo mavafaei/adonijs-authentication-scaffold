@@ -10,7 +10,8 @@ class UserSchema extends Schema {
             table.string("password", 60).nullable()
             table.boolean("status").defaultTo(false)
             table.uuid("refrenceId")
-            table.timestamp("activated_at").nullable();
+            table.string("code", 10)
+            table.timestamp("activated_at").nullable()
             table.timestamps()
         })
     }

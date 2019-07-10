@@ -1,14 +1,14 @@
 {
-  "name": "adonis-auth-apptech",
+  "name": "adonisJs-authentication-scaffold",
   "version": "1.0.0",
-  "description": "adonis auth based on jwt",
+  "description": "AdonisJs Authentication Scaffold",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "adonisjs",
-    "auth"
+    "authentication"
   ],
   "author": "Mohammad Amin Vafaei <aminvafaei13@gmail.com>",
   "license": "ISC",
@@ -20,7 +20,6 @@
     "japa-cli": "^1.0.1"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
-    "nodemailer": "^6.2.1"
+    "lodash": "^4.17.4"
   }
 }

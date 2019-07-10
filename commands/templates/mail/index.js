@@ -16,27 +16,27 @@ class Mail {
             /**
              * Ensures the command is executed within the project root
              * */
-            await this.base._ensureInProjectRoot();
+            await this.base._ensureInProjectRoot()
             /**
              * Prepends a line of text to a provided file
              * */
-            let routesFilePath = path.join(Helpers.appRoot(), 'start/routes.js');
+            let routesFilePath = path.join(Helpers.appRoot(), 'start/routes.js')
             await this.base._prependLineToFile({
                 filename: routesFilePath,
                 lineNumber: 2,
-                lineContent: `require('./${this.generatedRoutesFilename}');`
+                lineContent: `require('./${this.generatedRoutesFilename}')`
             })
-            await this._copyFiles();
+            await this._copyFiles()
         } catch (e) {
             this.command.error(e)
         }
     }
 
     async _copyFiles() {
-        await this.copyConfig();
-        // await this.copyApiAuthController();
+        await this.copyConfig()
+        await this.copyApiAuthController()
         await this.copyAppStarterFiles()
-        // await this.copyMigrationAndModel()
+        await this.copyMigrationAndModel()
         await this.copyEmailViewTemplates()
     }
 
@@ -60,7 +60,7 @@ class Mail {
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create start/${this.generatedRoutesFilename}`))
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create start/authEvents.js`))
         } catch (error) {
-            this.command.error(error);
+            this.command.error(error)
         }
     }
 
@@ -84,7 +84,7 @@ class Mail {
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create Models/User.js`))
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create database/migrations/create_users_table.js`))
         } catch (error) {
-            this.command.error(error);
+            this.command.error(error)
         }
     }
 
@@ -102,13 +102,13 @@ class Mail {
                 path.join(Helpers.viewsPath(), `auth/emails/verification.edge`)
             )
             await this.command.copy(
-                path.join(__dirname, 'password-mail.edge'),
-                path.join(Helpers.viewsPath(), `auth/emails/password.edge`)
+                path.join(__dirname, 'forgotPassword-mail.edge'),
+                path.join(Helpers.viewsPath(), `auth/emails/forgotPassword.edge`)
             )
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create auth/emails/verification.edge`))
-            this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create auth/emails/password.edge`))
+            this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create auth/emails/forgotPassword.edge`))
         } catch (error) {
-            this.command.error(error);
+            this.command.error(error)
         }
     }
 
@@ -127,7 +127,7 @@ class Mail {
             )
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create app/Controllers/HTTP/AuthController.js`))
         } catch (error) {
-            this.command.error(error);
+            this.command.error(error)
         }
     }
 
@@ -146,7 +146,7 @@ class Mail {
             )
             this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create config/adonis-auth-config.js`))
         } catch (error) {
-            this.command.error(error);
+            this.command.error(error)
         }
     }
 }

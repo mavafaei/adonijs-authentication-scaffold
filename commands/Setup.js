@@ -4,8 +4,9 @@ const path = require('path')
 const Helpers = use('Adonis/Src/Helpers')
 const AuthMail = require('../commands/templates/mail')
 const AuthOtp = require('../commands/templates/otp')
-//salam
 
+
+//salam
 class SetupCommand extends Command {
     /**
      * The command signature getter to define the
@@ -29,7 +30,7 @@ class SetupCommand extends Command {
      * @return {String}
      */
     static get description() {
-        return 'Setup  for Auth'
+        return 'Setup for Authentication Scaffold'
     }
 
     /**
@@ -44,14 +45,11 @@ class SetupCommand extends Command {
      * @return {void}
      */
     async handle({}, {}) {
-        let type;
+        let type
         type = await this.choice('Choose type of Authentication', [
             {
                 name: 'Email - Signup with email and send verification message.',
                 value: 'email'
-            }, {
-                name: 'OTP - Send One Time Password through SMS.',
-                value: 'otp'
             }
         ], 0)
         try {
@@ -59,17 +57,14 @@ class SetupCommand extends Command {
             switch (type) {
                 case 'email':
                     authClass = new AuthMail(this)
-                    break;
-                case 'otp':
-                    authClass = new AuthOtp(this)
-                    break;
+                    break
                 default:
                     this.error('invalid option')
-                    break;
+                    break
             }
         } catch ({message}) {
             if (!this.viaAce) {
-                throw error;
+                throw error
             }
             this.error(message)
         }

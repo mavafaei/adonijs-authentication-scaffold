@@ -17,12 +17,12 @@ class Base {
      * @private
      */
     async _ensureInProjectRoot() {
-        const acePath = path.join(process.cwd(), "ace");
-        const exists = fs.existsSync(acePath);
+        const acePath = path.join(process.cwd(), "ace")
+        const exists = fs.existsSync(acePath)
         if (!exists) {
             throw new Error(
                 "Oops! Make sure you are inside an Adonisjs app to run command."
-            );
+            )
         }
     }
 
@@ -36,11 +36,11 @@ class Base {
      * @return {Void}
      */
     async _prependLineToFile({filename, lineNumber, lineContent}) {
-        let fileContents = fs.readFileSync(filename, 'utf-8');
-        fileContents = fileContents.split("\n");
-        if (fileContents[lineNumber] === lineContent) return;
+        let fileContents = fs.readFileSync(filename, 'utf-8')
+        fileContents = fileContents.split("\n")
+        if (fileContents[lineNumber] === lineContent) return
         fileContents.splice(lineNumber, 0, `${lineContent}`)
-        fs.writeFileSync(filename, fileContents.join('\n'));
+        fs.writeFileSync(filename, fileContents.join('\n'))
     }
 }
 

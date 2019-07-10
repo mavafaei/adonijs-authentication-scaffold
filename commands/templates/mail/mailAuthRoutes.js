@@ -1,5 +1,5 @@
-"use strict";
-const Config = use("Config");
+"use strict"
+const Config = use("Config")
 /*
  |--------------------------------------------------------------------------
  | API Auth Routes
@@ -13,12 +13,14 @@ const Config = use("Config");
  |
  */
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use("Route");
-const loginRoute = Config.get("adonis-auth-config.loginRoute");
-const registerRoute = Config.get("adonis-auth-config.registrationRoute");
-const passwordResetRoute = Config.get(
-    "adonis-auth-config.passwordResetRoute"
-);
-Route.post(`api/v1${loginRoute}`, "AuthController.login");
-Route.post(`api/v1${registerRoute}`, "AuthController.register");
-Route.post(`api/v1${passwordResetRoute}`, "AuthController.forgotPassword");
+const Route = use("Route")
+const loginRoute = Config.get("adonis-auth-config.loginRoute")
+const registerRoute = Config.get("adonis-auth-config.registrationRoute")
+const verificationRoute = Config.get("adonis-auth-config.verificationRoute")
+const forgotPasswodRoute = Config.get("adonis-auth-config.forgotPasswordRoute")
+const changePasswordRoute = Config.get("adonis-auth-config.changePasswordRoute")
+Route.post(`api/v1${loginRoute}`, "AuthController.login")
+Route.post(`api/v1${registerRoute}`, "AuthController.register")
+Route.get(`api/v1${verificationRoute}`, "AuthController.verification")
+Route.post(`api/v1${forgotPasswodRoute}`, "AuthController.forgotPassword")
+Route.post(`api/v1${changePasswordRoute}`, "AuthController.changePassword")
