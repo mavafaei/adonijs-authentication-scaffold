@@ -58,22 +58,22 @@ start
 
 ### Installation
 
-Install `adonisJs-authentication-scaffold` by running the below command.
+Install `adonisjs-authentication-scaffold` by running the below command.
 
 __NPM__
 
 ```bash
-npm install adonisJs-authentication-scaffold --save-dev
+npm install adonisjs-authentication-scaffold --save-dev
 npm install @adonisjs/mail @adonisjs/validator
 ```
 
 ### Register providers.
 
-The `adonisJs-authentication-scaffold` provider must be registered as an `aceProvider`.
+The `adonisjs-authentication-scaffold` provider must be registered as an `aceProvider`.
 
 ```js
 const aceProviders = [
-  'adonisJs-authentication-scaffold/providers/CommandsProvider'
+  'adonisjs-authentication-scaffold/providers/CommandsProvider'
 ];
 ```
 
