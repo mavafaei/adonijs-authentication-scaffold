@@ -1,4 +1,5 @@
 'use strict'
+this.command.success(this.command.chalk.yellow(`${this.command.icon('success')} Create Models/User.js`))
 const Schema = use('Schema')
 
 

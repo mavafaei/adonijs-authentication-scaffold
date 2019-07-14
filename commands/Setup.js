@@ -50,6 +50,10 @@ class SetupCommand extends Command {
             {
                 name: 'Email - Signup with email and send verification message.',
                 value: 'email'
+            },
+            {
+                name: 'OTP - Sign in with One Time Password',
+                value: 'otp'
             }
         ], 0)
         try {
@@ -57,6 +61,16 @@ class SetupCommand extends Command {
             switch (type) {
                 case 'email':
                     authClass = new AuthMail(this)
+                    break
+                case 'otp':
+                    /*let type
+                     type = await this.choice('Choose SMS service provider', [
+                     {
+                     name: 'Kaveh Negar',
+                     value: 'kavehnegar'
+                     }
+                     ], 0)*/
+                    authClass = new AuthOtp(this)
                     break
                 default:
                     this.error('invalid option')
